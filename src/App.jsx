@@ -407,18 +407,7 @@ const LearningPlatform = () => {
         }
       ],
       presentation: "https://docs.google.com/presentation/d/10Gs-rRrL9xXtj3lKf9fTItSWleO7nOy-rUNq4hY1lJA/edit?usp=sharing",
-      assignment: {
-        title: "Практическа задача: Моделиране на логически функции",
-        description: "Проектирайте формален неврон, който реализира следните логически функции:",
-        tasks: [
-          "AND функция с 2 входа",
-          "OR функция с 2 входа",
-          "NOT функция с 1 вход",
-          "Обяснете защо XOR не може да се реализира с един неврон"
-        ],
-        deliverables: "Изчисления на ръка + Python код + кратко обяснение",
-        deadline: "1 седмица"
-      },
+      googleFormUrl: "https://forms.gle/vQBY6H1vdNZYKnz28",
       interactive: true
     },
     {
@@ -442,16 +431,7 @@ const LearningPlatform = () => {
         }
       ],
       presentation: "https://docs.google.com/presentation/d/example2",
-      assignment: {
-        title: "Проектиране на многослойна мрежа",
-        description: "Проектирайте архитектура за класификация на ръкописни цифри",
-        tasks: [
-          "Определете броя слоеве и неврони",
-          "Изберете активационни функции"
-        ],
-        deliverables: "Схема + обосновка",
-        deadline: "1 седмица"
-      },
+      googleFormUrl: "LINK_KUM_GOOGLE_FORM_MODUL_2",
       interactive: false
     },
     {
@@ -475,17 +455,7 @@ const LearningPlatform = () => {
         }
       ],
       presentation: "https://docs.google.com/presentation/d/example3",
-      assignment: {
-        title: "Имплементация на backpropagation",
-        description: "Реализирайте алгоритъма от нулата",
-        tasks: [
-          "Forward pass",
-          "Backward pass",
-          "Обновяване на тегла"
-        ],
-        deliverables: "Python код + тестове",
-        deadline: "2 седмици"
-      },
+      googleFormUrl: "LINK_KUM_GOOGLE_FORM_MODUL_3",
       interactive: false
     }
   ];
@@ -719,31 +689,54 @@ const LearningPlatform = () => {
             </div>
           )}
 
+          {/* Self-Assessment Quiz */}
           <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <ClipboardList className="w-6 h-6 text-red-600" />
-              <h2 className="text-2xl font-bold text-gray-800">Практическа задача</h2>
+              <ClipboardList className="w-6 h-6 text-green-600" />
+              <h2 className="text-2xl font-bold text-gray-800">Самопроверка</h2>
             </div>
-            <div className="bg-red-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">{currentModule.assignment.title}</h3>
-              <p className="text-gray-700 mb-4">{currentModule.assignment.description}</p>
+            <div className="bg-gradient-to-r from-green-50 to-emerald-100 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                Проверете знанията си по модула!
+              </h3>
+              <div className="space-y-2 mb-6">
+                <p className="text-gray-700 flex items-center gap-2">
+                  <span className="text-green-600">📝</span>
+                  <span>Тест с избираеми отговори</span>
+                </p>
+                <p className="text-gray-700 flex items-center gap-2">
+                  <span className="text-green-600">⏱️</span>
+                  <span>Очаквано време: ~10 минути</span>
+                </p>
+                <p className="text-gray-700 flex items-center gap-2">
+                  <span className="text-green-600">✅</span>
+                  <span>Автоматична оценка след завършване</span>
+                </p>
+                <p className="text-red-600 flex items-center gap-2 font-semibold">
+                  <span className="text-red-600">⚠️</span>
+                  <span>ВАЖНО: Имате право на САМО 1 опит!</span>
+                </p>
+              </div>
               
-              <div className="mb-4">
-                <h4 className="font-semibold text-gray-800 mb-2">Задачи:</h4>
-                <ul className="space-y-2">
-                  {currentModule.assignment.tasks.map((task, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-red-600 font-bold">{index + 1}.</span>
-                      <span className="text-gray-700">{task}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="border-t border-red-200 pt-4 mt-4">
-                <p className="text-gray-700"><span className="font-semibold">За предаване:</span> {currentModule.assignment.deliverables}</p>
-                <p className="text-gray-700 mt-2"><span className="font-semibold">Срок:</span> {currentModule.assignment.deadline}</p>
-              </div>
+              {currentModule.googleFormUrl && currentModule.googleFormUrl !== "LINK_KUM_GOOGLE_FORM_MODUL_1" && 
+               currentModule.googleFormUrl !== "LINK_KUM_GOOGLE_FORM_MODUL_2" && 
+               currentModule.googleFormUrl !== "LINK_KUM_GOOGLE_FORM_MODUL_3" ? (
+                <a
+                  href={currentModule.googleFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors text-lg"
+                >
+                  <ClipboardList className="w-6 h-6" />
+                  Започни самопроверка
+                </a>
+              ) : (
+                <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4">
+                  <p className="text-yellow-800 font-semibold">
+                    ⚠️ Тестът все още не е наличен. Скоро ще бъде добавен!
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
