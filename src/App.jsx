@@ -71,7 +71,7 @@ const LearningPlatform = () => {
           ]
         }
       ],
-      presentation: "https://docs.google.com/presentation/d/example1",
+      presentation: "https://docs.google.com/presentation/d/10Gs-rRrL9xXtj3lKf9fTItSWleO7nOy-rUNq4hY1lJA/edit?usp=sharing",
       assignment: {
         title: "Практическа задача: Моделиране на логически функции",
         description: "Проектирайте формален неврон, който реализира следните логически функции:",
