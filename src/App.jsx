@@ -512,7 +512,7 @@ const LearningPlatform = () => {
             <img 
               src="https://i.imgur.com/cFVZVMT.png" 
               alt="LGotsev - Knowledge & AI Engineering" 
-              className="h-20 object-contain"
+              className="h-28 object-contain"
             />
           </div>
           <p className="text-gray-700 mt-4 leading-relaxed">{courseData.description}</p>
