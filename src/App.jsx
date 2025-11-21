@@ -194,7 +194,7 @@ const NeuronSimulator = ({ onBack }) => {
                 onChange={(e) => setActivationFunction(e.target.value)}
                 className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg font-semibold cursor-pointer hover:border-purple-500 transition-colors"
               >
-                <option value="step">Прагова (Step)</option>
+                <option value="step">Стъпална (Step)</option>
                 <option value="sigmoid">Sigmoid (σ)</option>
                 <option value="tanh">Tanh</option>
                 <option value="relu">ReLU</option>
@@ -362,7 +362,7 @@ const LearningPlatform = () => {
     ],
     syllabus: [
       "Модул 1: Биологичен и формален неврон",
-      "Модул 2: Многослойни невронни мрежи",
+      "Модул 2: Многослойни мрежи и перцептрон",
       "Модул 3: Обратно разпростанение на грешката (Backpropagation)",
       "Модул 4: Конволюционни невронни мрежи (CNN)",
       "Модул 5: Рекурентни невронни мрежи (RNN)",
@@ -412,10 +412,10 @@ const LearningPlatform = () => {
     },
     {
       id: 2,
-      title: "Многослойни невронни мрежи",
+      title: "Многослойни мрежи и перцептрон",
       icon: BookOpen,
       color: "bg-green-500",
-      duration: "Лекционни и практически занятия",
+      duration: "6 академични часа",
       summary: "Изучаване на многослойни невронни мрежи, тяхната архитектура и изчислителни възможности.",
       goals: [
         "Разбиране на концепцията за слоеве в невронните мрежи",
@@ -439,15 +439,15 @@ const LearningPlatform = () => {
       title: "Backpropagation",
       icon: Target,
       color: "bg-purple-500",
-      duration: "Лекционни и семинарни занятия",
+      duration: "8 академични часа",
       summary: "Алгоритъмът за обучение на многослойни мрежи чрез обратно разпространение на грешката.",
       goals: [
-        "Разбиране на градиентно затихване",
+        "Разбиране на градиентно спускане",
         "Имплементация на backpropagation"
       ],
       content: [
         {
-          title: "Градиентно затихване и екплозия",
+          title: "Градиентно спускане",
           topics: [
             "Функции на загубата",
             "Частни производни"
@@ -501,12 +501,19 @@ const LearningPlatform = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-          <div className="flex items-center gap-4 mb-4">
-            <Brain className="w-16 h-16 text-blue-600" />
-            <div>
-              <h1 className="text-4xl font-bold text-gray-800">{courseData.title}</h1>
-              <p className="text-gray-600 text-lg">{courseData.subtitle}</p>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-4">
+              <Brain className="w-16 h-16 text-blue-600" />
+              <div>
+                <h1 className="text-4xl font-bold text-gray-800">{courseData.title}</h1>
+                <p className="text-gray-600 text-lg">{courseData.subtitle}</p>
+              </div>
             </div>
+            <img 
+              src="https://i.imgur.com/cFVZVMT.png" 
+              alt="LGotsev - Knowledge & AI Engineering" 
+              className="h-20 object-contain"
+            />
           </div>
           <p className="text-gray-700 mt-4 leading-relaxed">{courseData.description}</p>
           <div className="mt-4 inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-lg">
