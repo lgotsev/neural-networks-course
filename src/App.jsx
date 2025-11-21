@@ -194,7 +194,7 @@ const NeuronSimulator = ({ onBack }) => {
                 onChange={(e) => setActivationFunction(e.target.value)}
                 className="w-full p-3 border-2 border-gray-300 rounded-lg text-lg font-semibold cursor-pointer hover:border-purple-500 transition-colors"
               >
-                <option value="step">Стъпална (Step)</option>
+                <option value="step">Прагова (Step)</option>
                 <option value="sigmoid">Sigmoid (σ)</option>
                 <option value="tanh">Tanh</option>
                 <option value="relu">ReLU</option>
@@ -362,7 +362,7 @@ const LearningPlatform = () => {
     ],
     syllabus: [
       "Модул 1: Биологичен и формален неврон",
-      "Модул 2: Многослойни мрежи и перцептрон",
+      "Модул 2: Многослойни невронни мрежи",
       "Модул 3: Обратно разпростанение на грешката (Backpropagation)",
       "Модул 4: Конволюционни невронни мрежи (CNN)",
       "Модул 5: Рекурентни невронни мрежи (RNN)",
@@ -412,10 +412,10 @@ const LearningPlatform = () => {
     },
     {
       id: 2,
-      title: "Многослойни мрежи и перцептрон",
+      title: "Многослойни невронни архитектури",
       icon: BookOpen,
       color: "bg-green-500",
-      duration: "6 академични часа",
+      duration: "Лекции и практически семинари",
       summary: "Изучаване на многослойни невронни мрежи, тяхната архитектура и изчислителни възможности.",
       goals: [
         "Разбиране на концепцията за слоеве в невронните мрежи",
@@ -439,15 +439,15 @@ const LearningPlatform = () => {
       title: "Backpropagation",
       icon: Target,
       color: "bg-purple-500",
-      duration: "8 академични часа",
+      duration: "Лекции и практически семинари",
       summary: "Алгоритъмът за обучение на многослойни мрежи чрез обратно разпространение на грешката.",
       goals: [
-        "Разбиране на градиентно спускане",
+        "Разбиране на градиентното затихване",
         "Имплементация на backpropagation"
       ],
       content: [
         {
-          title: "Градиентно спускане",
+          title: "Градиентни предизвикателства",
           topics: [
             "Функции на загубата",
             "Частни производни"
