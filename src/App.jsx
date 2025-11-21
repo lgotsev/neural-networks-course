@@ -436,7 +436,7 @@ const LearningPlatform = () => {
     },
     {
       id: 3,
-      title: "Backpropagation",
+      title: "Обратно разпростанение на грешката (Backpropagation)",
       icon: Target,
       color: "bg-purple-500",
       duration: "Лекции и практически семинари",
